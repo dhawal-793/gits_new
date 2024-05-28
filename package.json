@@ -1,0 +1,20 @@
+{
+  "name": "gits-new",
+  "version": "1.0.0",
+  "description": "New UI for Geetanjali Institute of Technical Studies",
+  "scripts": {
+    "init:server": "cd Backend && pnpm i",
+    "init:client": "cd Frontend && pnpm i",
+    "init:both": "concurrently \"pnpm init:server\" \"pnpm init:client\"",
+    "dev:server": "cd Backend && pnpm dev",
+    "dev:client": "cd Frontend && pnpm dev",
+    "dev": "concurrently \"pnpm dev:server\" \"pnpm dev:client\"",
+    "start:client": "cd Frontend && pnpm build && pnpm start --port 3000",
+    "start:server": "cd Backend && pnpm start",
+    "start": "pnpm init:both && concurrently \"pnpm start:server\" \"pnpm start:client\""
+  },
+  "keywords": [],
+  "author": ["Dhawal Vijayvargiya","Somya Panchal", "Yogesh Patel"],
+  "license": "ISC",
+  "dependencies": {}
+}
