@@ -2,10 +2,10 @@ import express from 'express';
 import cors from 'cors'
 import { config } from 'dotenv'
 
-import connectToDB from '../db.js';
+// import connectToDB from '../db.js';
 
 config()
-connectToDB()
+// connectToDB()
 
 const app = express();
 
@@ -18,4 +18,3 @@ app.use(cors({
 app.get('/', (req, res) => res.redirect(process.env.FRONTEND))
 
 export default app;
-ZZ
