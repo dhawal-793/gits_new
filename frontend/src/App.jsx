@@ -7,9 +7,9 @@ function App() {
   return (
     <div className="w-full ">
       <Navbar />
-      {/* <Routes>
+      <Routes>
         <Route exact path="/" element={<Home />} />
-      </Routes> */}
+      </Routes>
     </div>
   );
 }
