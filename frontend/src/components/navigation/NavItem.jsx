@@ -30,7 +30,7 @@ const NavItem = ({ link }) => {
             {link.title}
           </p>
           <div
-            className={`absolute right-1/2 translate-x-1/2 mt-2 min-w-fit w-48 bg-white shadow-lg border-t-2 border-yellow-500 ${
+            className={`absolute right-1/2 translate-x-1/2 mt-2 min-w-fit w-48 bg-white shadow-lg border-t-4 border-yellow-500 pt-2 ${
               isOpen
                 ? "opacity-100 transition-all duration-300 ease-in"
                 : "opacity-0 pointer-events-none"
@@ -38,7 +38,7 @@ const NavItem = ({ link }) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <ul className=" rounded-lg">
+            <ul className="">
               {link.subLinks.map((subLink, index) => (
                 <SubNavItem key={index} subLink={subLink} />
               ))}
@@ -51,20 +51,20 @@ const NavItem = ({ link }) => {
             <a
               href={link.href}
               target="_blank"
-              className="cursor-pointer font-semibold hover:text-yellow-500 transition-colors duration-200"
+              className="cursor-pointer font-semibold hover:text-yellow-500 transition-colors duration-200 px-2"
             >
               {link.title}
             </a>
           ) : (
             <Link
               to={link.href}
-              className="cursor-pointer font-semibold hover:text-yellow-500 transition-colors duration-200"
+              className="cursor-pointer font-semibold hover:text-yellow-500 transition-colors duration-200 px-2"
             >
               {link.title}
             </Link>
           )}
           <div
-            className={`absolute right-1/2 translate-x-1/2 mt-4 w-full border-t-2 border-yellow-500  ${
+            className={`absolute right-1/2 translate-x-1/2 mt-2 w-full border-t-[3px] border-yellow-500  ${
               isOpen
                 ? "opacity-100 transition-all duration-300 ease-in"
                 : "opacity-0"

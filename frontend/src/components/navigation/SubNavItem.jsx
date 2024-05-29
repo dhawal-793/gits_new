@@ -13,7 +13,7 @@ const SubNavItem = ({ subLink }) => {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setIsOpen(false);
-    }, 200);
+    }, 100);
   };
 
   return (
@@ -24,12 +24,16 @@ const SubNavItem = ({ subLink }) => {
     >
       {subLink.subLinks ? (
         <>
-          <div className="cursor-pointer px-4 py-2 hover:text-yellow-500 flex items-center justify-between gap-10">
-            <span> {subLink.title}</span>
+          <div
+            className={`cursor-pointer px-4 py-2 border-l-4 border-transparent flex items-center justify-between gap-10 ${
+              isOpen && "text-yellow-500 border-l-yellow-500"
+            }`}
+          >
+            <span className="text-sm font-semibold"> {subLink.title}</span>
             <span>&gt;</span>
           </div>
           <div
-            className={`absolute left-full top-0 mt-2 ml-2 w-48 bg-white shadow-lg rounded-lg ${
+            className={`absolute left-full top-0 mt-1 ml-[2px] w-48 bg-white shadow-lg ${
               isOpen ? "block" : "hidden"
             }`}
             onMouseEnter={handleMouseEnter}
@@ -37,13 +41,17 @@ const SubNavItem = ({ subLink }) => {
           >
             <ul className="py-2">
               {subLink.subLinks.map((nestedSubLink, index) => (
-                <li key={index}>
-                  <Link
-                    to={nestedSubLink.href}
-                    className="block px-4 py-2 hover:text-yellow-500"
-                  >
-                    {nestedSubLink.title}
-                  </Link>
+                <li
+                  key={index}
+                  className="block px-4 py-2 hover:text-yellow-500 font-medium text-sm"
+                >
+                  {nestedSubLink.external ? (
+                    <a href={nestedSubLink.href} target="_blank">
+                      {nestedSubLink.title}
+                    </a>
+                  ) : (
+                    <Link to={nestedSubLink.href}>{nestedSubLink.title}</Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -55,14 +63,14 @@ const SubNavItem = ({ subLink }) => {
             <a
               href={subLink.href}
               target="_blank"
-              className="block px-4 py-2 hover:text-yellow-500"
+              className="block px-4 border-l-4 border-transparent hover:border-l-yellow-500 hover:text-yellow-500 text-sm py-2 font-semibold"
             >
               {subLink.title}
             </a>
           ) : (
             <Link
               to={subLink.href}
-              className="block px-4 py-2 hover:text-yellow-500"
+              className="block px-4 border-l-4 border-transparent hover:border-l-yellow-500 hover:text-yellow-500 text-sm py-2 font-semibold"
             >
               {subLink.title}
             </Link>
