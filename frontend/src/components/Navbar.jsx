@@ -49,7 +49,7 @@ const Navbar = ({isMenuOpen,toggleNav}) => {
           <img className="w-28 h-28" src="/images/rtu-logo.jpg" alt="" /> */}
             </Link>
             <div className="flex items-center gap-5">
-              <div className="fixed top-40 right-10 lg:static">
+              <div className="fixed top-[50vh] -right-[3.2rem] translate-y-1/2 -rotate-90 lg:static lg:rotate-0 lg:translate-y-0">
                 <CustomButton />
               </div>
               <button
