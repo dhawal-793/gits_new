@@ -3,17 +3,17 @@ import { useEffect, useState } from "react";
 const Home = () => {
   const [data, setData] = useState("dummy data");
   useEffect(() => {
-    const fetchdata = async () => {
-      try {
-        const response = await fetch("http://localhost:5000");
-        const jsonData = await response.json();
-        setData(jsonData.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+    // const fetchdata = async () => {
+    //   try {
+    //     const response = await fetch("http://localhost:5000");
+    //     const jsonData = await response.json();
+    //     setData(jsonData.data);
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // };
 
-    fetchdata();
+    // fetchdata();
   }, []);
 
   return (
