@@ -30,7 +30,7 @@ const SubNavItem = ({ subLink }) => {
             }`}
           >
             <span className="text-sm font-semibold"> {subLink.title}</span>
-            <span>&gt;</span>
+            <span className="fa-solid fa-chevron-right"/>
           </div>
           <div
             className={`absolute left-full top-0 mt-1 ml-[2px] w-48 bg-white shadow-lg ${
