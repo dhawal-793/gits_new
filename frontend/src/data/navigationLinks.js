@@ -1,11 +1,9 @@
 export const navLinks = [
   {
     title: "home",
-    href: "#",
     subLinks: [
       {
         title: "About Us",
-        href: "#",
         subLinks: [
           {
             title: "Welcome to GITS",
@@ -19,7 +17,6 @@ export const navLinks = [
       },
       {
         title: "Management Team",
-        href: "#",
         subLinks: [
           {
             title: "Chairman's Message",
@@ -51,7 +48,6 @@ export const navLinks = [
   },
   {
     title: "Statutory Info",
-    href: "#",
     subLinks: [
       {
         title: "Governing Body",
@@ -63,41 +59,39 @@ export const navLinks = [
       },
       {
         title: "Commttees",
-        href: "#",
         subLinks: [
           {
             title: "Anti Raging Committee",
-            href: "/anti-raging-committee",
+            href: "committee/anti-raging-committee",
           },
           {
             title: "Internal Complaint Committee",
-            href: "/internal-complaint-committee",
+            href: "committee/internal-complaint-committee",
           },
           {
             title: "SC/ST Committee",
-            href: "/sc-st-committee",
+            href: "committee/sc-st-committee",
           },
           {
             title: "OBC Committee",
-            href: "/obc-committee",
+            href: "committee/obc-committee",
           },
           {
             title: "Library Committee",
-            href: "/library-committee",
+            href: "committee/library-committee",
           },
           {
             title: "Women Empowerment Cell",
-            href: "/women-empowerment-cell",
+            href: "committee/women-empowerment-cell",
           },
           {
             title: "Industry Iinstitute Interaction Cell",
-            href: "/industry-institute-interaction-cell",
+            href: "committee/industry-institute-interaction-cell",
           },
         ],
       },
       {
         title: "NAAC",
-        href: "#",
         subLinks: [
           {
             title: "Curricular Aspects",
@@ -169,7 +163,6 @@ export const navLinks = [
   },
   {
     title: "Admission",
-    href: "#",
     subLinks: [
       {
         title: "B.Tech",
@@ -196,5 +189,72 @@ export const navLinks = [
   {
     title: "Departments",
     href: "/departments",
+  },
+  {
+    title: "R&D",
+    subLinks: [
+      {
+        title: "Innovation",
+        href: "/research-innovation",
+      },
+      {
+        title: "GJCA",
+        external: true,
+        href: "https://gjca.gits.ac.in/",
+      },
+      {
+        title: "Funded Research",
+        href: "/funded-research",
+      },
+      {
+        title: "Faculty Publications",
+        href: "/faculty-publications",
+      },
+      {
+        title: "COE: Industrial Automation",
+        href: "/coe-industrial-automation",
+      },
+    ],
+  },
+  {
+    title: "Placements",
+    subLinks: [
+      {
+        title: "GITS Placement Cell",
+        href: "/placements",
+      },
+      {
+        title: "GITS Alumni Forum",
+        href: "/gits-alumni-forum",
+      },
+      {
+        title: "Placement 2023-24",
+        href: "/placements/2023-24",
+      },
+      {
+        title: "Placement 2022-23",
+        href: "/placements/2022-23",
+      },
+      {
+        title: "Placement 2021-22",
+        href: "/placements/2021-22",
+      },
+      {
+        title: "Placement 2020-21",
+        href: "/placements/2020-21",
+      },
+      {
+        title: "Placement 2019-20",
+        href: "/placements/2019-20",
+      },
+    ],
+  },
+  {
+    title: "Blog",
+    href: "/blog",
+  },
+  {
+    title: "Contact Us",
+    href: "/contact-us",
   },
 ];
