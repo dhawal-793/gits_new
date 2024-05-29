@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -23,31 +24,63 @@ import ManagementTeamsMessage from "./pages/ManagementTeamsMessage";
 import Committee from "./pages/Committee";
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleNav = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <div className="w-full bg-white ">
-      <Navbar />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/contact-us" element={<Contact />} />
-        <Route exact path="/blog" element={<Blog />} />
-        <Route exact path="/departments" element={<Departments />} />
-        <Route exact path="/placements" element={<Placements />} />
-        <Route exact path="/placements/:year" element={<YearPlacements />} />
-        <Route exact path="/gits-alumni-forum" element={<GITSAlumniForum />} />
-        <Route exact path="/research-innovation"  element={<ResearchInnovation />}/>
-        <Route exact path="/funded-research" element={<FundedResearch />} />
-        <Route exact path="/faculty-publications"  element={<FacultyPublications />}/>
-        <Route exact path="/coe-industrial-automation"  element={<COEIndustrialAutomation />}/>
-        <Route exact path="/hostel"  element={<Hostel />}/>
-        <Route exact path="/admission/:course" element={<CourseAdmission />} />
-        <Route exact path="/why-gits" element={<WhyGits />} />
-        <Route exact path="/vision-mission" element={<VisionAndMission />} />
-        <Route exact path="/management-team/:management" element={<ManagementTeamsMessage />} />
-        <Route exact path="/committee/:committee" element={<Committee />} />
-        
-        <Route exact path="/:id" element={<ExtraPage />} />
-      </Routes>
-      <Footer />
+    <div className="w-full bg-white relative">
+      <div className={`w-full bg-white ${isMenuOpen ? "fixed inset-0 pr-2" : "static"} `}>
+      <Navbar isMenuOpen={isMenuOpen} toggleNav={toggleNav} />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/contact-us" element={<Contact />} />
+          <Route exact path="/blog" element={<Blog />} />
+          <Route exact path="/departments" element={<Departments />} />
+          <Route exact path="/placements" element={<Placements />} />
+          <Route exact path="/placements/:year" element={<YearPlacements />} />
+          <Route
+            exact
+            path="/gits-alumni-forum"
+            element={<GITSAlumniForum />}
+          />
+          <Route
+            exact
+            path="/research-innovation"
+            element={<ResearchInnovation />}
+          />
+          <Route exact path="/funded-research" element={<FundedResearch />} />
+          <Route
+            exact
+            path="/faculty-publications"
+            element={<FacultyPublications />}
+          />
+          <Route
+            exact
+            path="/coe-industrial-automation"
+            element={<COEIndustrialAutomation />}
+          />
+          <Route exact path="/hostel" element={<Hostel />} />
+          <Route
+            exact
+            path="/admission/:course"
+            element={<CourseAdmission />}
+          />
+          <Route exact path="/why-gits" element={<WhyGits />} />
+          <Route exact path="/vision-mission" element={<VisionAndMission />} />
+          <Route
+            exact
+            path="/management-team/:management"
+            element={<ManagementTeamsMessage />}
+          />
+          <Route exact path="/committee/:committee" element={<Committee />} />
+
+          <Route exact path="/:id" element={<ExtraPage />} />
+        </Routes>
+        <Footer />
+      </div>
     </div>
   );
 }
