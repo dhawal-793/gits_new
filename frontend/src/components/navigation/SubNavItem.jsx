@@ -11,7 +11,6 @@ const SubNavItem = ({ subLink }) => {
   };
 
   const handleMouseLeave = () => {
-    // Add a delay before closing the dropdown
     timeoutRef.current = setTimeout(() => {
       setIsOpen(false);
     }, 200);
@@ -25,15 +24,12 @@ const SubNavItem = ({ subLink }) => {
     >
       {subLink.subLinks ? (
         <>
-          <div
-            to={subLink.href}
-            className="cursor-pointer px-4 py-2 hover:text-yellow-500 flex items-center justify-between"
-          >
+          <div className="cursor-pointer px-4 py-2 hover:text-yellow-500 flex items-center justify-between gap-10">
             <span> {subLink.title}</span>
             <span>&gt;</span>
           </div>
           <div
-            className={`absolute left-[101%] top-0 mt-2 w-48 bg-white shadow-lg rounded-lg ${
+            className={`absolute left-full top-0 mt-2 ml-2 w-48 bg-white shadow-lg rounded-lg ${
               isOpen ? "block" : "hidden"
             }`}
             onMouseEnter={handleMouseEnter}
@@ -42,24 +38,36 @@ const SubNavItem = ({ subLink }) => {
             <ul className="py-2">
               {subLink.subLinks.map((nestedSubLink, index) => (
                 <li key={index}>
-                  <a
-                    href={nestedSubLink.href}
+                  <Link
+                    to={nestedSubLink.href}
                     className="block px-4 py-2 hover:text-yellow-500"
                   >
                     {nestedSubLink.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
         </>
       ) : (
-        <Link
-          to={subLink.href}
-          className="block px-4 py-2 hover:text-yellow-500"
-        >
-          {subLink.title}
-        </Link>
+        <>
+          {subLink.external ? (
+            <a
+              href={subLink.href}
+              target="_blank"
+              className="block px-4 py-2 hover:text-yellow-500"
+            >
+              {subLink.title}
+            </a>
+          ) : (
+            <Link
+              to={subLink.href}
+              className="block px-4 py-2 hover:text-yellow-500"
+            >
+              {subLink.title}
+            </Link>
+          )}
+        </>
       )}
     </li>
   );
