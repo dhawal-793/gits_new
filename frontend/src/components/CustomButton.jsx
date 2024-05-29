@@ -2,7 +2,7 @@ const CustomButton = () => {
   return (
     <div className="flex justify-center">
       <a
-        href="https://admissions.jaipur.manipal.edu/"
+        href="https://www.gits.ac.in/apply-online/"
         target="_blank"
         rel="noopener noreferrer"
         className="custom-btn relative inline-block text-white uppercase tracking-wider py-1 lg:py-2 px-5 lg:px-10 font-semibold textsm lg:text-lg rounded-lg bg-[#1760A6] border-2 border-[#1760A6] overflow-hidden group"
