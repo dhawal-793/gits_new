@@ -13,7 +13,6 @@ const NavItem = ({ link }) => {
   };
 
   const handleMouseLeave = () => {
-    // Add a delay before closing the dropdown
     timeoutRef.current = setTimeout(() => {
       setIsOpen(false);
     }, 200);
@@ -25,13 +24,13 @@ const NavItem = ({ link }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <Link to={link.href} className="hover:text-blue-600">
+      <Link to={link.href} className="font-semibold hover:text-yellow-500 transition-colors duration-200">
         {link.title}
       </Link>
       {link.subLinks && (
         <div
-          className={`absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg ${
-            isOpen ? "block" : "hidden"
+          className={`absolute right-1/2 translate-x-1/2 mt-2 w-48 bg-white shadow-lg border-t-2 border-yellow-500 ${
+            isOpen ? "opacity-100 transition-all duration-300 ease-in" : "opacity-0 pointer-events-none"
           }`}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
