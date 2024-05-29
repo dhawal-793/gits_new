@@ -63,7 +63,7 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-        <ul className="hidden lg:flex items-center justify-center gap-4 w-fit mx-auto mt-3">
+        <ul className="hidden lg:flex items-center justify-center gap-12 w-fit mx-auto mt-3">
           {navLinks.map((link, index) => (
             <NavItem key={index} link={link} />
           ))}
