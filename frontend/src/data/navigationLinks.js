@@ -1,6 +1,6 @@
 export const navLinks = [
   {
-    title: "home",
+    title: "Home",
     subLinks: [
       {
         title: "About Us",

@@ -35,11 +35,11 @@ const Navbar = () => {
     <nav
       className={`${
         isSticky
-          ? "fixed bg-white/40 backdrop-blur-sm top-0 transition-all ease-in duration-200 inset-x-0"
-          : "static bg-white"
-      } h-36`}
+          ? "fixed bg-white/40 backdrop-blur-sm top-0 transition-all ease-linear duration-200 inset-x-0"
+          : "static bg-white/80"
+      }`}
     >
-      <div className="mx-auto max-w-screen-2xl  py-2 px-4">
+      <div className="mx-auto max-w-screen-2xl  py-1 px-4">
         <div className="flex items-center justify-between w-full">
           <Link to="/" className="w-fit flex gap-2 items-center">
             <img className="w-20 h-auto" src="/images/gits-logo.png" alt="" />
@@ -63,7 +63,7 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-        <ul className="flex items-center justify-center gap-4 w-fit mx-auto">
+        <ul className="hidden lg:flex items-center justify-center gap-4 w-fit mx-auto mt-3">
           {navLinks.map((link, index) => (
             <NavItem key={index} link={link} />
           ))}
