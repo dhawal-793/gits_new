@@ -33,7 +33,7 @@ const SubNavItem = ({ subLink }) => {
             <span>&gt;</span>
           </div>
           <div
-            className={`absolute left-full top-0 mt-2 w-48 bg-white shadow-lg rounded-lg ${
+            className={`absolute left-[101%] top-0 mt-2 w-48 bg-white shadow-lg rounded-lg ${
               isOpen ? "block" : "hidden"
             }`}
             onMouseEnter={handleMouseEnter}
