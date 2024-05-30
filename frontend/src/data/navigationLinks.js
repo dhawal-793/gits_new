@@ -3,6 +3,10 @@ export const navLinks = [
     title: "Home",
     subLinks: [
       {
+        title: "Home",
+        hred: "/",
+      },
+      {
         title: "About Us",
         subLinks: [
           {
@@ -58,7 +62,7 @@ export const navLinks = [
         href: "/collage-council",
       },
       {
-        title: "Commttees",
+        title: "Committees",
         subLinks: [
           {
             title: "Anti Raging Committee",
