@@ -4,7 +4,7 @@ export const navLinks = [
     subLinks: [
       {
         title: "Home",
-        hred: "/",
+        href: "/",
       },
       {
         title: "About Us",
