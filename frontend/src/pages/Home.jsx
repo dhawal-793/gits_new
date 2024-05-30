@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <Container>
-      <div className="min-h-screen bg-black text-white text-center py-20">
+      <div className="min-h-screen text-center pt-[30vh] py-20">
         <p className="text-center tabular-nums mb-20 text-3xl">50000</p>
         <p className="fontbold text-lg">{data}</p>
       </div>
