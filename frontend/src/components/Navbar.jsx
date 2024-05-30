@@ -6,17 +6,18 @@ import NavItem from "./navigation/NavItem";
 
 import { navLinks } from "../data/navigationLinks";
 import SideNav from "./navigation/SideNav";
+import Container from "./ui/Container";
 
-const Navbar = ({isMenuOpen,toggleNav}) => {
-  const [isSticky, setIsSticky] = useState(false);
+const Navbar = ({ isMenuOpen }) => {
+  const [isFixed, setIsFixed] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      if (offset > 0) {
-        setIsSticky(true);
+      if (offset > 84) {
+        setIsFixed(true);
       } else {
-        setIsSticky(false);
+        setIsFixed(false);
       }
     };
 
@@ -29,56 +30,57 @@ const Navbar = ({isMenuOpen,toggleNav}) => {
 
   return (
     <>
-      <nav
-        className={`${
-          isSticky
-            ? "sticky bg-white/90 backdrop-blur-md top-0 transition-all ease-linear duration-200 inset-x-0"
-            : "static bg-white"
-        }`}
-      >
-        <div className="mx-auto max-w-screen-2xl  py-1 px-4">
-          <div className="flex items-center justify-between w-full">
-            <Link to="/" className="w-fit flex gap-2 items-center">
-              <img className="w-20 h-auto" src="/images/gits-logo.png" alt="" />
-              <div className="w-80">
-                <p className="font-semibold text-2xl">
-                  Geetanjali Institute of Tehcnical Studies
-                </p>
-              </div>
-              {/* <img className="w-28 h-28" src="/images/nba-logo.png" alt="" />
-          <img className="w-28 h-28" src="/images/rtu-logo.jpg" alt="" /> */}
-            </Link>
-            <div className="flex items-center gap-5">
-              <div className="fixed top-[50vh] -right-[3.2rem] translate-y-1/2 -rotate-90 lg:static lg:rotate-0 lg:translate-y-0">
-                <CustomButton />
-              </div>
-              <button
-                className="w-14 h-14 flex items-center justify-center relative z-50 text-yellow-500"
-                onClick={toggleNav}
-              >
-                <span
-                  className={`text-3xl fa-solid ${
-                    isMenuOpen ? "fa-xmark -rotate-180" : "fa-bars rotate-0"
-                  } transition-all duration-200`}
+      <nav className="w-full">
+        <div className="fixed lg:static top-0 inset-x-0 bg-white/40 backdrop-blur-md">
+          <Container>
+            <div className="flex items-center justify-between w-full">
+              <Link to="/" className="w-fit flex gap-2 items-center">
+                <img
+                  className="w-20 h-auto"
+                  src="/images/gits-logo.png"
+                  alt=""
                 />
-              </button>
+                <div className="w-80">
+                  <p className="font-semibold text-xl md:text-2xl">
+                    Geetanjali Institute of Tehcnical Studies
+                  </p>
+                </div>
+                {/* <img className="w-28 h-28" src="/images/nba-logo.png" alt="" />
+          <img className="w-28 h-28" src="/images/rtu-logo.jpg" alt="" /> */}
+              </Link>
             </div>
-          </div>
-          <ul className="hidden lg:flex items-center justify-center gap-12 w-fit mx-auto mt-3">
-            {navLinks.map((link, index) => (
-              <NavItem key={index} link={link} />
-            ))}
-          </ul>
+          </Container>
+        </div>
+        <div className="lg:hidden h-[84px]" />
+        <div
+          className={`fixed top-[50vh] -right-[3.2rem] -translate-y-1/2 -rotate-90 transition-all duration-200  ${
+            isFixed
+              ? "lg:top-[50vh] lg:-right-[4.5rem] lg:-translate-y-1/2 lg:-rotate-90"
+              : "lg:top-4 lg:right-4 lg:rotate-0 lg:translate-y-0"
+          }`}
+        >
+          <CustomButton />
+        </div>
+        <div
+          className={`${
+            isFixed ? "lg:fixed top-0 z-50" : ""
+          } bg-primary w-full hidden lg:block `}
+        >
+          <Container>
+            <ul className="flex items-center justify-center gap-12 w-fit mx-auto my-2">
+              {navLinks.map((link, index) => (
+                <NavItem key={index} link={link} />
+              ))}
+            </ul>
+          </Container>
         </div>
       </nav>
       <nav
-        className={`fixed right-0 top-0 h-full max-h-screen  w-full bg-white/40 backdrop-blur-sm transition-all duration-200 ${
+        className={`fixed inset-x-0 top-0 h-full max-h-screen  w-full bg-black/90 backdrop-blur-sm transition-all duration-200 ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
-        } z-30`}
+        } z-[60]  lg:hidden`}
       >
-        <div className="overflow-y-auto">
-          <SideNav />
-        </div>
+        <SideNav />
       </nav>
     </>
   );
