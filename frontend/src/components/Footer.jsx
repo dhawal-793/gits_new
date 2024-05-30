@@ -1,3 +1,5 @@
+import Container from "./ui/Container";
+
 const linksData = [
   {
     title: "Useful Links",
@@ -17,8 +19,8 @@ const linksData = [
 
 const Footer = () => {
   return (
-    <footer className="bg-[#273044] w-full">
-      <div className="max-w-screen-2xl mx-auto text-white p-5">
+    <footer className="bg-[#273044] w-full text-white">
+      <Container>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-7 gap-x-8 py-10 ">
           {linksData.map((linksData, idx) => (
             <FooterLinkGroup key={idx} linkData={linksData} />
@@ -56,7 +58,7 @@ const Footer = () => {
             <i className="cursor-pointer fa-brands fa-youtube" />
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 };
