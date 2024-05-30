@@ -1,16 +1,24 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import AllRoutes from "./AllRoutes";
+import SideNav from "./components/navigation/SideNav";
 
 function App() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleNav = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const navigateTo = (url) => {
+    console.log(url);
+    navigate(url);
+    setIsMenuOpen(false)
   };
 
   useEffect(() => {
@@ -23,9 +31,11 @@ function App() {
           isMenuOpen ? "fixed inset-0" : "static"
         } `}
       >
-        <Navbar isMenuOpen={isMenuOpen}/>
+        <Navbar />
+        <SideNav isMenuOpen={isMenuOpen} navigateTo={navigateTo} />
+
         <button
-          className="fixed top-4 right-4  w-14 h-14 flex items-center justify-center z-90 text-primary lg:hidden"
+          className="fixed top-4 right-4  w-14 h-14 flex items-center justify-center z-[90] text-primary lg:hidden"
           onClick={toggleNav}
         >
           <span
