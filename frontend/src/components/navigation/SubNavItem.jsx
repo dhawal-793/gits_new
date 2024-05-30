@@ -26,7 +26,7 @@ const SubNavItem = ({ subLink }) => {
         <>
           <div
             className={`cursor-pointer px-4 py-2 border-l-4 border-transparent flex items-center justify-between gap-10 ${
-              isOpen && "text-yellow-500 border-l-yellow-500"
+              isOpen && "text-primary border-l-primary"
             }`}
           >
             <span className="text-sm font-semibold"> {subLink.title}</span>
@@ -43,7 +43,7 @@ const SubNavItem = ({ subLink }) => {
               {subLink.subLinks.map((nestedSubLink, index) => (
                 <li
                   key={index}
-                  className="block px-4 py-2 hover:text-yellow-500 font-medium text-sm"
+                  className="block px-4 py-2 hover:text-primary font-medium text-sm"
                 >
                   {nestedSubLink.external ? (
                     <a href={nestedSubLink.href} target="_blank">
@@ -63,14 +63,14 @@ const SubNavItem = ({ subLink }) => {
             <a
               href={subLink.href}
               target="_blank"
-              className="block px-4 border-l-4 border-transparent hover:border-l-yellow-500 hover:text-yellow-500 text-sm py-2 font-semibold"
+              className="block px-4 border-l-4 border-transparent hover:border-l-primary hover:text-primary text-sm py-2 font-semibold"
             >
               {subLink.title}
             </a>
           ) : (
             <Link
               to={subLink.href}
-              className="block px-4 border-l-4 border-transparent hover:border-l-yellow-500 hover:text-yellow-500 text-sm py-2 font-semibold"
+              className="block px-4 border-l-4 border-transparent hover:border-l-primary hover:text-primary text-sm py-2 font-semibold"
             >
               {subLink.title}
             </Link>
