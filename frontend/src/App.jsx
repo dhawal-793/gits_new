@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import AllRoutes from "./AllRoutes";
 import SideNav from "./components/navigation/SideNav";
+import Footer from "./components/Footer";
+import BackToTopButton from "./components/BackToTopButton";
+
+import AllRoutes from "./AllRoutes";
 
 function App() {
   const location = useLocation();
@@ -26,10 +28,10 @@ function App() {
   }, [location.pathname]);
   return (
     <div className="w-full bg-white relative">
-        <Navbar />
-        <SideNav isMenuOpen={isMenuOpen} navigateTo={navigateTo} />
+      <Navbar />
+      <SideNav isMenuOpen={isMenuOpen} navigateTo={navigateTo} />
 
-        <button
+      <button
         className={`fixed top-0.5 translate-y-1/2 right-4 z-[90] text-primary lg:hidden text-3xl w-fit flex items-center justify-center`}
         onClick={toggleNav}
       >
@@ -39,8 +41,9 @@ function App() {
           } transition-all duration-200`}
         ></span>
       </button>
-        <AllRoutes />
-        <Footer />
+      <AllRoutes />
+      <BackToTopButton />
+      <Footer />
     </div>
   );
 }
