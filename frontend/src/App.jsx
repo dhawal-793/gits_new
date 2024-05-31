@@ -18,7 +18,7 @@ function App() {
   const navigateTo = (url) => {
     console.log(url);
     navigate(url);
-    setIsMenuOpen(false)
+    setIsMenuOpen(false);
   };
 
   useEffect(() => {
@@ -26,27 +26,21 @@ function App() {
   }, [location.pathname]);
   return (
     <div className="w-full bg-white relative">
-      <div
-        className={`w-full bg-white ${
-          isMenuOpen ? "fixed inset-0" : "static"
-        } `}
-      >
         <Navbar />
         <SideNav isMenuOpen={isMenuOpen} navigateTo={navigateTo} />
 
         <button
-          className="fixed top-4 right-4  w-14 h-14 flex items-center justify-center z-[90] text-primary lg:hidden"
-          onClick={toggleNav}
-        >
-          <span
-            className={`text-3xl fa-solid ${
-              isMenuOpen ? "fa-xmark -rotate-180" : "fa-bars rotate-0"
-            } transition-all duration-200`}
-          />
-        </button>
+        className={`fixed top-0.5 translate-y-1/2 right-4 z-[90] text-primary lg:hidden text-3xl w-fit flex items-center justify-center`}
+        onClick={toggleNav}
+      >
+        <span
+          className={`fa-solid ${
+            isMenuOpen ? "fa-xmark -rotate-180" : "fa-bars rotate-0"
+          } transition-all duration-200`}
+        ></span>
+      </button>
         <AllRoutes />
         <Footer />
-      </div>
     </div>
   );
 }

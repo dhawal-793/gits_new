@@ -32,11 +32,15 @@ const Navbar = () => {
     <nav className="w-full">
       <div className="fixed lg:static top-0 inset-x-0 bg-white/40 backdrop-blur-md">
         <Container>
-          <div className="flex items-center justify-between w-full">
-            <Link to="/" className="w-fit flex gap-2 items-center">
-              <img className="w-20 h-auto" src="/images/gits-logo.png" alt="" />
-              <div className="w-80">
-                <p className="font-semibold text-xl md:text-2xl">
+          <div className=" w-full">
+            <Link to="/" className="w-fit flex gap-1 items-center">
+              <img
+                className="w-14 sm:w-16 md:w-20 h-auto -ml-1"
+                src="/images/gits-logo.png"
+                alt=""
+              />
+              <div className="w-56 md:w-72">
+                <p className="font-semibold text-sm sm:text-xl md:text-2xl">
                   Geetanjali Institute of Tehcnical Studies
                 </p>
               </div>
@@ -62,7 +66,7 @@ const Navbar = () => {
         } bg-primary w-full hidden lg:block `}
       >
         <Container>
-          <ul className="flex items-center justify-center gap-12 w-fit mx-auto my-2">
+          <ul className="flex items-center justify-center gap-10 w-fit mx-auto my-2">
             {navLinks.map((link, index) => (
               <NavItem key={index} link={link} />
             ))}
