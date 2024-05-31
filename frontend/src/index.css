@@ -14,9 +14,9 @@ html,
 body,
 :root {
   height: 100%;
-  --primary: #f1f1f1;
-  --secondary: #888685;
-  --tertiary: #c1bfbe;
+  --primary-scroll: #f1f1f1;
+  --secondary-scroll: #888685;
+  --tertiary-scroll: #c1bfbe;
 }
 
 *::-webkit-scrollbar {
@@ -26,18 +26,18 @@ body,
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--primary);
+  background: var(--primary-scroll);
   border-radius: 5px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--secondary);
+  background-color: var(--secondary-scroll);
   border-radius: 5px;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--primary-scroll);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--tertiary);
+  background-color: var(--tertiary-scroll);
 }
 
 @layer components {
