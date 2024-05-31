@@ -1,6 +1,7 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 import { navLinks } from "../../data/navigationLinks";
+import SideNavNestedMenu from "./SideNavNestedMenu";
 
 const SideNav = ({ isMenuOpen, navigateTo }) => {
   const [currentOpenLink, setCurrentOpenLink] = useState("");
@@ -44,7 +45,7 @@ const SideNav = ({ isMenuOpen, navigateTo }) => {
                     >
                       <ul className="">
                         {link.subLinks.map((subLink, index) => (
-                          <SubNavItem
+                          <SideNavNestedMenu
                             key={index}
                             subLink={subLink}
                             navigateTo={navigateTo}
@@ -66,7 +67,6 @@ const SideNav = ({ isMenuOpen, navigateTo }) => {
                     ) : (
                       <button
                         onClick={() => navigateTo(link.href)}
-                        // href={link.href}
                         className="block w-full text-right cursor-pointer px-6 font-semibold hover:text-primary transition-colors duration-200"
                       >
                         {link.title}
@@ -84,89 +84,3 @@ const SideNav = ({ isMenuOpen, navigateTo }) => {
 };
 
 export default SideNav;
-
-const SubNavItem = ({ subLink, navigateTo }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const timeoutRef = useRef(null);
-
-  const handleMouseEnter = () => {
-    clearTimeout(timeoutRef.current);
-    setIsOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setIsOpen(false);
-    }, 100);
-  };
-
-  return (
-    <li
-      className="relative"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      {subLink.subLinks ? (
-        <>
-          <div
-            className={`w-full text-right cursor-pointer px-4 py-2 flex items-center justify-between gap-10 ${
-              isOpen && "text-primary"
-            }`}
-          >
-            <span
-              className={`fa-solid ${
-                isOpen ? "fa-chevron-down" : "fa-chevron-right"
-              }`}
-            />
-            <span className="text-sm font-semibold"> {subLink.title}</span>
-          </div>
-          <div
-            className={` w-full text-right border-t-2 backdrop-blur-sm ${
-              isOpen ? "block" : "hidden"
-            }`}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <ul className="py-2 ">
-              {subLink.subLinks.map((nestedSubLink, index) => (
-                <li
-                  key={index}
-                  className="block px-4 py-2 border-r-2 border-transparent hover:text-primary font-medium text-sm hover:border-primary"
-                >
-                  {nestedSubLink.external ? (
-                    <a href={nestedSubLink.href} target="_blank">
-                      {nestedSubLink.title}
-                    </a>
-                  ) : (
-                    <button onClick={()=>navigateTo(nestedSubLink.href)}>
-                      {nestedSubLink.title}
-                    </button>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </>
-      ) : (
-        <>
-          {subLink.external ? (
-            <a
-              href={subLink.href}
-              target="_blank"
-              className="block px-4 hover:text-primary text-sm py-2 font-semibold"
-            >
-              {subLink.title}
-            </a>
-          ) : (
-            <button
-              onClick={() => navigateTo(subLink.href)}
-              className="px-4 hover:text-primary text-sm py-2 font-semibold"
-            >
-              {subLink.title}
-            </button>
-          )}
-        </>
-      )}
-    </li>
-  );
-};
