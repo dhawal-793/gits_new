@@ -29,7 +29,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="w-full">
+    <nav className="w-full relative z-50">
       <div className="fixed lg:static top-0 inset-x-0 bg-white/40 backdrop-blur-md">
         <Container>
           <div className=" w-full">
