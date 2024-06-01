@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import Container from "./ui/Container";
+import Container from "../ui/Container";
 
-import CustomButton from "./CustomButton";
-import NavItem from "./navigation/NavItem";
+import CustomButton from "../CustomButton";
+import NavItem from "./NavItem";
 
-import { navLinks } from "../data/navigationLinks";
+import { navLinks } from "../../data/navigationLinks";
 
 const Navbar = () => {
   const [isFixed, setIsFixed] = useState(false);
