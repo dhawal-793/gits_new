@@ -32,7 +32,7 @@ const Navbar = () => {
     <nav className="w-full relative z-50">
       <div className="fixed lg:static top-0 inset-x-0 bg-white/40 backdrop-blur-md">
         <Container>
-          <div className=" w-full">
+          <div className=" w-full relative flex items-center justify-between">
             <Link to="/" className="w-fit flex gap-1 items-center">
               <img
                 className="w-14 sm:w-16 md:w-20 h-auto -ml-1"
@@ -47,15 +47,16 @@ const Navbar = () => {
               {/* <img className="w-28 h-28" src="/images/nba-logo.png" alt="" />
           <img className="w-28 h-28" src="/images/rtu-logo.jpg" alt="" /> */}
             </Link>
+            <div className={`hidden lg:block  ${isFixed && "lg:hidden"}`}>
+              <CustomButton />
+            </div>
           </div>
         </Container>
       </div>
       <div className="lg:hidden h-[84px]" />
       <div
-        className={`fixed top-[50vh] -right-[3.2rem] -translate-y-1/2 -rotate-90 transition-all duration-200  ${
-          isFixed
-            ? "lg:top-[50vh] lg:-right-[4.5rem] lg:-translate-y-1/2 lg:-rotate-90"
-            : "lg:top-4 lg:right-4 lg:rotate-0 lg:translate-y-0"
+        className={`fixed top-[50vh] -right-[3.3rem] -translate-y-1/2 -rotate-90 transition-all duration-200  ${
+          isFixed ? " lg:-right-[4.6rem]" : "lg:-right-full"
         }`}
       >
         <CustomButton />
