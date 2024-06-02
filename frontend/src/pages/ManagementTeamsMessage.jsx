@@ -25,8 +25,9 @@ const ManagementTeamsMessage = () => {
         setData(response.data);
       } catch (error) {
         console.log(error.message);
-        if (error.response.status == 400) setData("404");
-        else {
+        if (error.response.status == 404) {
+          setData("404");
+        } else {
           setError(error.message);
         }
       } finally {
