@@ -14,7 +14,7 @@ const SideNav = ({ isMenuOpen, navigateTo }) => {
 
   return (
     <nav
-      className={`fixed inset-x-0 top-0 h-full max-h-screen  w-full bg-black/90 backdrop-blur-sm transition-all duration-200 ${
+      className={`fixed inset-x-0 top-0 h-full max-h-screen  w-full bg-black/90 backdrop-blur-sm transition-all duration-700 ${
         isMenuOpen ? "translate-x-0" : "translate-x-full"
       } z-[60]  lg:hidden`}
     >

@@ -42,7 +42,7 @@ const Navigation = () => {
         <span
           className={`fa-solid ${
             isMenuOpen ? "fa-xmark -rotate-180" : "fa-bars rotate-0"
-          } transition-all duration-200`}
+          } transition-all duration-300`}
         ></span>
       </button>
     </>

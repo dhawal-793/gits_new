@@ -67,7 +67,7 @@ const Navbar = () => {
         } bg-primary w-full hidden lg:block `}
       >
         <Container>
-          <ul className="flex items-center justify-center gap-10 w-fit mx-auto my-2">
+          <ul className="flex items-center justify-center gap-7 xl:gap-10 w-fit mx-auto my-2">
             {navLinks.map((link, index) => (
               <NavItem key={index} link={link} />
             ))}
