@@ -12,36 +12,47 @@ const BASE_URL = import.meta.env.VITE_HOST;
 const ManagementTeamsMessage = () => {
   const { management } = useParams();
   const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    axios
-      .get(`${BASE_URL}/api/managements-message/${management}`)
-      .then((response) => {
+    const fetchMessage = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(
+          `${BASE_URL}/api/managements-message/${management}`
+        );
         setData(response.data);
-      })
-      .catch((error) => {
-        console.log("Error", error.message);
-        if (error.response.status) setData("404");
-      });
+      } catch (error) {
+        console.log(error.message);
+        if (error.response.status==400) setData("404");
+        else {
+          setError(error.message);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchMessage();
+
   }, [management]);
 
-  useEffect(() => {
-    
-  }, [data])
-  
+  useEffect(() => {}, [data]);
+
   if (data == "404") {
     return <NotFound />;
   }
 
-  if (!data) {
-    return <div>Something Went wrong</div>;
+  if (loading) {
+    return <div className="text-center py-16 text-sm">Loading...</div>;
   }
-
-  
-
+  if (error) {
+  return <div className="text-center py-16 text-red-500 text-lg">Internal Server Error</div>
+  }
   return (
     <div>
-      <Title title={data.title} />
+      {data && <>
+        <Title title={data.title} />
       <Container>
         <Heading>
           <span className="capitalize">{data.title}</span>
@@ -64,6 +75,7 @@ const ManagementTeamsMessage = () => {
           </div>
         </div>
       </Container>
+      </>}
     </div>
   );
 };
