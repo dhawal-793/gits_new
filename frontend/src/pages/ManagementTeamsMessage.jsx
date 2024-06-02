@@ -25,7 +25,7 @@ const ManagementTeamsMessage = () => {
         setData(response.data);
       } catch (error) {
         console.log(error.message);
-        if (error.response.status==400) setData("404");
+        if (error.response.status == 400) setData("404");
         else {
           setError(error.message);
         }
@@ -34,7 +34,6 @@ const ManagementTeamsMessage = () => {
       }
     };
     fetchMessage();
-
   }, [management]);
 
   useEffect(() => {}, [data]);
@@ -47,35 +46,41 @@ const ManagementTeamsMessage = () => {
     return <div className="text-center py-16 text-sm">Loading...</div>;
   }
   if (error) {
-  return <div className="text-center py-16 text-red-500 text-lg">Internal Server Error</div>
+    return (
+      <div className="text-center py-16 text-red-500 text-lg">
+        Internal Server Error
+      </div>
+    );
   }
   return (
     <div>
-      {data && <>
-        <Title title={data.title} />
-      <Container>
-        <Heading>
-          <span className="capitalize">{data.title}</span>
-        </Heading>
-        <div className="flex flex-col md:flex-row gap-5">
-          <div className=" px-5">
-            <img
-              className="mx-auto w-[18rem] md:w-[80rem] h-auto"
-              src={data.image}
-              alt={data.name}
-            />
-            <p className="font-semibold text-xl my-4 md:my-8 text-center">
-              {data.name}
-            </p>
-          </div>
-          <div className="space-y-8 text-base">
-            {data?.messages?.map((message, idx) => (
-              <p key={idx}>{message}</p>
-            ))}
-          </div>
-        </div>
-      </Container>
-      </>}
+      {data && (
+        <>
+          <Title title={data.title} />
+          <Container>
+            <Heading>
+              <span className="capitalize">{data.title}</span>
+            </Heading>
+            <div className="flex flex-col md:flex-row gap-5">
+              <div className=" px-5">
+                <img
+                  className="mx-auto w-[18rem] md:w-[80rem] h-auto"
+                  src={data.image}
+                  alt={data.name}
+                />
+                <p className="font-semibold text-xl my-4 md:my-8 text-center">
+                  {data.name}
+                </p>
+              </div>
+              <div className="space-y-8 text-base">
+                {data?.messages?.map((message, idx) => (
+                  <p key={idx}>{message}</p>
+                ))}
+              </div>
+            </div>
+          </Container>
+        </>
+      )}
     </div>
   );
 };
