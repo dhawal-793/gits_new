@@ -7,13 +7,11 @@ import Title from "../components/ui/Title";
 import Heading from "../components/ui/Heading";
 import Container from "../components/ui/Container";
 
-
-const BASE_URL = import.meta.env.VITE_HOST
+const BASE_URL = import.meta.env.VITE_HOST;
 
 const ManagementTeamsMessage = () => {
   const { management } = useParams();
   const [data, setData] = useState(null);
-
 
   useEffect(() => {
     axios
@@ -22,17 +20,24 @@ const ManagementTeamsMessage = () => {
         setData(response.data);
       })
       .catch((error) => {
-        console.log('Error',error.message);
+        console.log("Error", error.message);
         if (error.response.status) setData("404");
       });
   }, [management]);
 
+  useEffect(() => {
+    
+  }, [data])
+  
   if (data == "404") {
     return <NotFound />;
   }
+
   if (!data) {
-  return <div>Something Went wrong</div>
-}
+    return <div>Something Went wrong</div>;
+  }
+
+  
 
   return (
     <div>
