@@ -1,6 +1,7 @@
 const managements = {
   chairmans_message: {
     name: "Shri J. P. Agarwal",
+    title:"Chairman's Message",
     image: "/images/management/chairman.jpg",
     messages: [
       "Geetanjali Institute of Technical Studies is a front runner in developing teaching and learning methods that reflect best practice in imparting technical education to young minds. Our experienced faculty members teach students to move from the realm of ideas to real-world applications. The college is committed to equip students with knowledge, skills and attitude.",
@@ -10,6 +11,7 @@ const managements = {
   },
   vice_chairmans_message: {
     name: "Mr. Kapil Agarwal",
+    title:"Vice Chairman's Message",
     image: "/images/management/vice_chairman.jpg",
     messages: [
       "Today Geetanjali Institute of Technical Studies, has become a dream destination for engineering aspirants. We have achieved this reputation due to the exceptional qualification and experience of dedicated Faculty and staff, excellent infrastructure with modern laboratories, classes for personality development, remarkable results and placements. We also keep on inviting eminent technocrats scientists and experts from industry to update current technology to the students to brighten their future.",
@@ -21,6 +23,7 @@ const managements = {
   },
   executive_directors_message: {
     name: "Shri Ankit Agarwal",
+    title:"Executive Director's Message",
     image: "/images/management/executive_director.jpg",
     messages: [
       "In the new knowledge age intellectual competitiveness is essential for achieving the status of a leader. For this the quality education, more so with practical orientation is of paramount importance.",
@@ -29,6 +32,7 @@ const managements = {
   },
   directors_message: {
     name: "Dr. Narendra Singh Rathore",
+    title:"Director's Message",
     image: "/images/management/director.jpg",
     messages: [
       "I am happy to welcome you on behalf of Geetanjali Institute of Technical Studies (GITS), which is being recognized for its quality for excellent teaching learning, quality reforms and assurance, attractive placement and new dimension for entrepreneurship.",
@@ -40,6 +44,7 @@ const managements = {
   },
   directors_iqac_message: {
     name: "Dr. Sudhakar Jindal",
+    title:"Director's IQAC Message",
     image: "/images/management/director_iqac.jpg",
     messages: [
       "Employability of Indian Engineering Graduates has been a great Challenge before the nation. In a study it is observed that there is a widespread dissatisfaction with the current graduates – 64% of employers hiring fresh engineering graduates are only somewhat satisfied with the quality of the new hires or worse.",
@@ -49,6 +54,7 @@ const managements = {
   },
   finance_controllers_message: {
     name: "Mr. B L Jangir",
+    title:"Finance Controller's Message",
     image: "/images/management/finance_controller.jpg",
     messages: [
       "I extend my good wishes to the GITS family as we enter the 21st year since our establishment. The college has had a long journey during which it has acquitted itself well. It is well said, ‘If you plan for a year, sow a seed, and if you plan for a century, educate the people’. Our college is a place where we promote freedom of thought, innovation and creativity which are essential for academic excellence. The institution has made every impressive step by setting high standards in the field of technical education. I am glad that today it has become one of the pioneer institutions in the field of education and is committed to provide every facility to promote our students to achieve the pinnacle of success. I extend my warm greetings and felicitations to students, teachers and staff and wish you all the success.",
