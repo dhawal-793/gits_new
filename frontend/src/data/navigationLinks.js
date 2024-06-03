@@ -221,6 +221,27 @@ export const navLinks = [
     ],
   },
   {
+    title: "CDC",
+    subLinks: [
+      {
+        title: "Career Development Center",
+        href: "/cdc",
+      },
+      {
+        title: "Enterpreneurship Development Cell",
+        href: "/entrepreneurship-cell",
+      },
+      {
+        title: "Training Partners",
+        href: "/training-partners",
+      },
+      {
+        title: "Assessment Partners",
+        href: "/assessment-partners",
+      },
+    ],
+  },
+  {
     title: "Placements",
     subLinks: [
       {
