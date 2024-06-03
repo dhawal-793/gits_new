@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import managementsMessageRoute from "./api/management-teams-message.js";
+import partnerRoute from "./api/partners.js"
 
 // import connectToDB from './db.js'
 // connectToDB()
@@ -20,6 +21,7 @@ app.use(
 );
 
 app.use("/api/managements-message", managementsMessageRoute);
+app.use("/api/partners", partnerRoute);
 
 app.get("/", (req, res) => {
   res.status(200).json({ data: "data from server" });
