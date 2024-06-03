@@ -18,55 +18,62 @@ import WhyGits from "./pages/WhyGits";
 import VisionAndMission from "./pages/VisionAndMission";
 import ManagementTeamsMessage from "./pages/ManagementTeamsMessage";
 import Committee from "./pages/Committee";
+import CDC from "./pages/CDC";
+import EnterpreneurshipCell from "./pages/EnterpreneurshipCell";
+import TrainingPartners from "./pages/TrainingPartners";
+import AssessmentPartners from "./pages/AssessmentPartners";
 
 const AllRoutes = () => {
   return (
     <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/contact-us" element={<Contact />} />
-          <Route exact path="/blog" element={<Blog />} />
-          <Route exact path="/departments" element={<Departments />} />
-          <Route exact path="/placements" element={<Placements />} />
-          <Route exact path="/placements/:year" element={<YearPlacements />} />
-          <Route
-            exact
-            path="/gits-alumni-forum"
-            element={<GITSAlumniForum />}
-          />
-          <Route
-            exact
-            path="/research-innovation"
-            element={<ResearchInnovation />}
-          />
-          <Route exact path="/funded-research" element={<FundedResearch />} />
-          <Route
-            exact
-            path="/faculty-publications"
-            element={<FacultyPublications />}
-          />
-          <Route
-            exact
-            path="/coe-industrial-automation"
-            element={<COEIndustrialAutomation />}
-          />
-          <Route exact path="/hostel" element={<Hostel />} />
-          <Route
-            exact
-            path="/admission/:course"
-            element={<CourseAdmission />}
-          />
-          <Route exact path="/why-gits" element={<WhyGits />} />
-          <Route exact path="/vision-mission" element={<VisionAndMission />} />
-          <Route
-            exact
-            path="/management-team/:management"
-            element={<ManagementTeamsMessage />}
-          />
-          <Route exact path="/committee/:committee" element={<Committee />} />
+      <Route exact path="/" element={<Home />} />
+      <Route exact path="/contact-us" element={<Contact />} />
+      <Route exact path="/blog" element={<Blog />} />
+      <Route exact path="/departments" element={<Departments />} />
+      <Route exact path="/placements" element={<Placements />} />
+      <Route exact path="/placements/:year" element={<YearPlacements />} />
+      <Route exact path="/gits-alumni-forum" element={<GITSAlumniForum />} />
+      <Route
+        exact
+        path="/research-innovation"
+        element={<ResearchInnovation />}
+      />
+      <Route exact path="/funded-research" element={<FundedResearch />} />
+      <Route
+        exact
+        path="/faculty-publications"
+        element={<FacultyPublications />}
+      />
+      <Route
+        exact
+        path="/coe-industrial-automation"
+        element={<COEIndustrialAutomation />}
+      />
+      <Route exact path="/hostel" element={<Hostel />} />
+      <Route exact path="/admission/:course" element={<CourseAdmission />} />
+      <Route exact path="/why-gits" element={<WhyGits />} />
+      <Route exact path="/vision-mission" element={<VisionAndMission />} />
+      <Route
+        exact
+        path="/management-team/:management"
+        element={<ManagementTeamsMessage />}
+      />
+      <Route exact path="/cdc" element={<CDC />} />
+      <Route
+        exact
+        path="/entrepreneurship-cell"
+        element={<EnterpreneurshipCell />}
+      />
+      <Route exact path="/training-partners" element={<TrainingPartners />} />
+      <Route
+        exact
+        path="/assessment-partners"
+        element={<AssessmentPartners />}
+      />
+      <Route exact path="/committee/:committee" element={<Committee />} />
+      <Route exact path="/:id" element={<ExtraPage />} />
+    </Routes>
+  );
+};
 
-          <Route exact path="/:id" element={<ExtraPage />} />
-        </Routes>
-  )
-}
-
-export default AllRoutes
+export default AllRoutes;
