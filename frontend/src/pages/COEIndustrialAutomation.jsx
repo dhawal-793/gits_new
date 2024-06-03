@@ -81,7 +81,7 @@ const COEIndustrialAutomation = () => {
           <h2 className="font-semibold text-xl">
             Centre of Excellence in Department of Mechanical Engineering
           </h2>
-          <p className="text-sm mt-3 mb-8">
+          <p className="text-sm mt-3 mb-8 text-justify">
             Centre of Excellence in Industrial automation shall sensible to
             enhance the knowledge of the engineering graduates in the area of
             industrial automation through hands-on training in the area of
@@ -107,7 +107,7 @@ const COEIndustrialAutomation = () => {
                         currentMessage === title ? "fa-minus" : "fa-plus"
                       }`}
                     ></span>
-                    <span>{title}</span>
+                    <span className="text-justify">{title}</span>
                   </button>
                   <div
                     className={`${
@@ -124,7 +124,7 @@ const COEIndustrialAutomation = () => {
                           </h3>
                         )}
                         {topic.messages && (
-                          <ul className="space-y-4 my-3 pl-4">
+                          <ul className="space-y-4 my-3 pl-4 text-justify">
                             {topic.messages.map((message, id) => (
                               <li className="text-sm list-disc" key={id}>
                                 {message}

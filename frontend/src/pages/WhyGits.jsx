@@ -23,7 +23,7 @@ const WhyGits = () => {
       <Title title="Welcome to Gits" />
       <Container>
         <Heading>Welcome TO GITS</Heading>
-        <div className="space-y-4 text-xs sm:text-sm lg:text-base my-6">
+        <div className="space-y-4 text-xs sm:text-sm lg:text-base my-6 text-justify">
           <p>
             GITS have created a niche in the world of technical and management
             innovation. Our standard progression of delivering concepts of
@@ -48,7 +48,7 @@ const WhyGits = () => {
           <h4 className="text-xl font-semibold">Features</h4>
           <ul className="space-y-2 md:space-y-3 my-5">
             {features.map((feature, idx) => (
-              <li key={idx} className="flex items-start gap-3">
+              <li key={idx} className="flex items-start gap-3 text-justify">
                 <span className="fa-regular fa-star text-primary pt-1" />
                 <span className="text-xs sm:text-sm lg:text-base">
                   {feature}

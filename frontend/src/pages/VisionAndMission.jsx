@@ -29,7 +29,7 @@ const VisionAndMission = () => {
       <Container>
         <div>
           <Heading>Vision</Heading>
-          <div className="space-y-4 text-xs sm:text-sm lg:text-base my-6">
+          <div className="space-y-4 text-xs sm:text-sm lg:text-base my-6 text-justify">
             <p>
               GITS have created a niche in the world of technical and management
               innovation. Our standard progression of delivering concepts of
@@ -57,7 +57,7 @@ const VisionAndMission = () => {
             {missions.map((mission, idx) => (
               <li
                 key={idx}
-                className="flex items-start gap-2 text-xs sm:text-sm lg:text-base "
+                className="flex items-start gap-2 text-xs sm:text-sm lg:text-base text-justify"
               >
                 <span className=" text-primary font-medium ">{`M${
                   idx + 1
@@ -69,7 +69,7 @@ const VisionAndMission = () => {
         </div>
         <div>
           <Heading>Objectives</Heading>
-          <ul className="space-y-2 md:space-y-3 my-5">
+          <ul className="space-y-2 md:space-y-3 my-5 text-justify">
             {objective.map((objective, idx) => (
               <li key={idx} className="flex items-start gap-3">
                 <span className="fa-regular fa-star text-primary pt-1" />

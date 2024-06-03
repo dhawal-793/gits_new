@@ -69,13 +69,13 @@ const ManagementTeamsMessage = () => {
                   src={data.image}
                   alt={data.name}
                 />
-                <p className="font-semibold text-xl my-4 md:my-8 text-center">
+                <p className="font-semibold text-xl my-4 md:my-8 text-center ">
                   {data.name}
                 </p>
               </div>
               <div className="space-y-8 text-base">
                 {data?.messages?.map((message, idx) => (
-                  <p key={idx}>{message}</p>
+                  <p key={idx} className="text-justify">{message}</p>
                 ))}
               </div>
             </div>
