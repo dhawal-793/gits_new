@@ -4,6 +4,7 @@ import { config } from "dotenv";
 
 // import connectToDB from '../db.js';
 import managementsMessageRoute from "./management-teams-message.js";
+import partnerRoute from "./partners.js";
 
 config();
 // connectToDB()
@@ -19,6 +20,7 @@ app.use(
 );
 
 app.use("/api/managements-message", managementsMessageRoute);
+app.use("/api/partners", partnerRoute);
 
 app.get("/", (req, res) => res.redirect(process.env.FRONTEND));
 
