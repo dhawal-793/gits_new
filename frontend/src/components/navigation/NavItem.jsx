@@ -26,11 +26,11 @@ const NavItem = ({ link }) => {
     >
       {link.subLinks ? (
         <>
-          <p className="cursor-pointer font-semibold hover:text-secondary transition-colors duration-200">
+          <button className="cursor-pointer font-semibold hover:text-white transition-colors duration-200 p-2">
             {link.title}
-          </p>
+          </button>
           <div
-            className={`absolute right-1/2 translate-x-1/2 mt-4 min-w-fit w-48 bg-white shadow-lg border-t-4 border-primary pt-2 ${
+            className={`absolute right-1/2 translate-x-1/2 mt-2 min-w-fit w-48 bg-white shadow-lg border-t-4 border-primary pt-2 ${
               isOpen
                 ? "opacity-100 transition-all duration-300 ease-in"
                 : "opacity-0 pointer-events-none"
@@ -51,20 +51,20 @@ const NavItem = ({ link }) => {
             <a
               href={link.href}
               target="_blank"
-              className="cursor-pointer font-semibold hover:text-secondary transition-colors duration-200 px-4"
+              className="block cursor-pointer font-semibold hover:text-white transition-colors duration-200 p-2"
             >
               {link.title}
             </a>
           ) : (
             <Link
               to={link.href}
-              className="cursor-pointer font-semibold hover:text-secondary transition-colors duration-200 px-4"
+              className="block cursor-pointer font-semibold hover:text-white transition-colors duration-200 p-2"
             >
               {link.title}
             </Link>
           )}
           <div
-            className={`absolute right-1/2 translate-x-1/2 mt-4 w-full border-t-4 border-primary  ${
+            className={`absolute right-1/2 translate-x-1/2 mt-2 w-[125%] border-t-4 border-primary  ${
               isOpen
                 ? "opacity-100 transition-all duration-300 ease-in"
                 : "opacity-0"
