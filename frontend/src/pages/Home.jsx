@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import Container from "../components/ui/Container";
-import SectionOne from "../components/home-components/section1";
+import SectionOne from "../components/home-components/SectionOne";
 
 const Home = () => {
   const [data, setData] = useState("dummy data");
