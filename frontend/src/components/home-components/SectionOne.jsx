@@ -3,8 +3,8 @@ import Counter from "./Counter";
 
 const SectionOne = () => {
   return (
-    <div className="p-5 mx-auto max-w-screen-2xl">
-      <div className="bg-tertiary  w-full rounded-xl">
+    <div className="md:p-5 mx-auto max-w-screen-2xl">
+      <div className="bg-tertiary  w-full rounded-t-3xl md:rounded-t-xl md:rounded-b-xl">
         <Container>
           <div className="relative w-full py-8">
             <div className="relative z-10">
@@ -25,7 +25,7 @@ const SectionOne = () => {
                   ></iframe>
                 </div>
 
-                <div className="mx-auto w-fit grid grid-cols-2 gap-24 sm:gap-28 lg:gap-12 text-white font-bold text-center">
+                <div className="mx-auto w-fit grid grid-cols-1 sm:grid-cols-2 gap-16 sm:gap-28 lg:gap-12 text-white font-bold text-center">
                   <CounterItem
                     icon="fa-solid fa-people-group"
                     message="Alumni"
