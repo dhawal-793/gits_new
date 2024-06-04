@@ -1,12 +1,11 @@
-import SimpleCarousel from "../components/home-components/SimpleCarosel";
-import SectionOne from "../components/home-components/SectionOne";
+import Carousel from "../components/home-components/Carousel";
+import WhatsDifferent from "../components/home-components/WhatsDifferent";
 
 const Home = () => {
-
   return (
     <>
-    <SimpleCarousel/>
-      <SectionOne />
+      <Carousel />
+      <WhatsDifferent />
     </>
   );
 };
