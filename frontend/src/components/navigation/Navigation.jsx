@@ -36,7 +36,7 @@ const Navigation = () => {
       <Navbar />
       <SideNav isMenuOpen={isMenuOpen} navigateTo={navigateTo} />
       <button
-        className={`fixed top-0.5 translate-y-1/2 right-4 z-[90] text-primary lg:hidden text-3xl w-fit flex items-center justify-center`}
+        className={`fixed top-0.5 sm:top-[0.4rem] md:top-3 translate-y-1/2 right-4 z-[90] text-primary lg:hidden text-3xl w-fit flex items-center justify-center`}
         onClick={toggleNav}
       >
         <span

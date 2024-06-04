@@ -53,7 +53,7 @@ const Navbar = () => {
           </div>
         </Container>
       </div>
-      <div className="lg:hidden h-[84px]" />
+      <div className="h-[64px] sm:h-[72px]  md:h-[88px] lg:hidden " />
       <div
         className={`fixed top-[50vh] -right-[3.3rem] -translate-y-1/2 -rotate-90 transition-all duration-200  ${
           isFixed ? " lg:-right-[4.6rem]" : "lg:-right-full"
@@ -63,17 +63,18 @@ const Navbar = () => {
       </div>
       <div
         className={`${
-          isFixed ? "lg:fixed top-0 z-50" : ""
-        } bg-primary w-full hidden lg:block `}
+          isFixed ? "lg:fixed top-0 z-50 bg-white/20" : "bg-primary"
+        }  backdrop-blur-lg w-full hidden lg:block `}
       >
         <Container>
-          <ul className="flex items-center justify-center gap-7 xl:gap-10 w-fit mx-auto my-2">
+          <ul className="flex items-center justify-center gap-5 xl:gap-8 w-fit mx-auto">
             {navLinks.map((link, index) => (
               <NavItem key={index} link={link} />
             ))}
           </ul>
         </Container>
       </div>
+      <div className={`${isFixed && "lg:h-[48px]"}`}></div>
     </nav>
   );
 };
