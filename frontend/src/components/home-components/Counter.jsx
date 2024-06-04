@@ -36,7 +36,7 @@ const Counter = ({ value }) => {
 
     let start = 0;
     const end = value;
-    const duration = 1000;
+    const duration = 2000;
     const increment = end / duration;
     let startTime = null;
 
@@ -58,7 +58,7 @@ const Counter = ({ value }) => {
   return (
     <div ref={counterRef}>
       {isVisible && (
-        <h1 className="text-primary text-3xl sm:text-4xl lg:text-3xl font-bold mb-4">
+        <h1 className="text-primary text-3xl sm:text-4xl md:text-3xl font-bold mb-2 -mt-2">
           {count}
         </h1>
       )}
