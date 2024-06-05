@@ -22,6 +22,9 @@ import CDC from "./pages/CDC";
 import EnterpreneurshipCell from "./pages/EnterpreneurshipCell";
 import TrainingPartners from "./pages/TrainingPartners";
 import AssessmentPartners from "./pages/AssessmentPartners";
+import ManagementTeamPage from "./pages/ManagementTeamPage";
+import CurricularAspect from "./pages/CurricularAspect";
+import SubjectAdmission from "./pages/SubjectAdmission";
 
 const AllRoutes = () => {
   return (
@@ -33,6 +36,8 @@ const AllRoutes = () => {
       <Route exact path="/placements" element={<Placements />} />
       <Route exact path="/placements/:year" element={<YearPlacements />} />
       <Route exact path="/gits-alumni-forum" element={<GITSAlumniForum />} />
+      <Route exact path="/curricular-aspects" element={<CurricularAspect />} />
+      <Route exact path="/admission/:department" element={<SubjectAdmission />} />
       <Route
         exact
         path="/research-innovation"
@@ -53,6 +58,7 @@ const AllRoutes = () => {
       <Route exact path="/admission/:course" element={<CourseAdmission />} />
       <Route exact path="/why-gits" element={<WhyGits />} />
       <Route exact path="/vision-mission" element={<VisionAndMission />} />
+      <Route exact path="/management-team" element={<ManagementTeamPage />} />
       <Route
         exact
         path="/management-team/:management"
