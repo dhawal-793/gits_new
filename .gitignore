@@ -11,6 +11,7 @@ logs
 */**/dist
 */**/dist-ssr
 */**/*.env
+*/**/*-lock.*
 
 # Editor directories and files
 .vscode/*
