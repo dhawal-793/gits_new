@@ -60,7 +60,7 @@ const SubjectAdmission = () => {
     };
 
     fetchContent();
-  }, []);
+  }, [department]);
 
   if (mdxContent == "404") {
     return <NotFound />;
