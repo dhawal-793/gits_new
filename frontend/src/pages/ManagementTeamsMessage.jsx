@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-import NotFound from "../components/ui/NotFound";
+import NotFound from "../components/errors/NotFound";
 import Title from "../components/ui/Title";
 import Heading from "../components/ui/Heading";
 import Container from "../components/ui/Container";
+import InternalServerError from "../components/errors/InternalServerError";
 
 const BASE_URL = import.meta.env.VITE_HOST;
 
@@ -13,7 +14,6 @@ const ManagementTeamsMessage = () => {
   const { management } = useParams();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
 
   useEffect(() => {
     const fetchMessage = async () => {
@@ -28,7 +28,7 @@ const ManagementTeamsMessage = () => {
         if (error.response.status == 404) {
           setData("404");
         } else {
-          setError(error.message);
+          setData("500");
         }
       } finally {
         setLoading(false);
@@ -37,25 +37,21 @@ const ManagementTeamsMessage = () => {
     fetchMessage();
   }, [management]);
 
-  useEffect(() => {}, [data]);
 
   if (data == "404") {
     return <NotFound />;
   }
+  if (data == "500") {
+    return <InternalServerError />;
+  }
 
-  if (loading) {
-    return <div className="text-center py-16 text-sm">Loading...</div>;
-  }
-  if (error) {
-    return (
-      <div className="text-center py-16 text-red-500 text-lg">
-        Internal Server Error
-      </div>
-    );
-  }
   return (
-    <div>
-      {data && (
+    <>
+      {loading ? (
+        <div className="min-h-[80vh] w-full flex items-center justify-center text-center">
+          <p>Loading...</p>
+        </div>
+      ) : data ? (
         <>
           <Title title={data.title} />
           <Container>
@@ -75,14 +71,18 @@ const ManagementTeamsMessage = () => {
               </div>
               <div className="space-y-8 text-base">
                 {data?.messages?.map((message, idx) => (
-                  <p key={idx} className="text-justify">{message}</p>
+                  <p key={idx} className="text-justify">
+                    {message}
+                  </p>
                 ))}
               </div>
             </div>
           </Container>
         </>
+      ) : (
+        <div className="min-h-[80vh] w-full" />
       )}
-    </div>
+    </>
   );
 };
 
