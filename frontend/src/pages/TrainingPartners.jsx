@@ -3,15 +3,15 @@ import axios from "axios";
 
 import Container from "../components/ui/Container";
 import Title from "../components/ui/Title";
-import NotFound from "../components/ui/NotFound";
+import NotFound from "../components/errors/NotFound";
 import Partners from "../components/Partners";
+import InternalServerError from "../components/errors/InternalServerError";
 
 const BASE_URL = import.meta.env.VITE_HOST;
 
 const TrainingPartners = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
 
   useEffect(() => {
     const fetchPartners = async () => {
@@ -26,7 +26,7 @@ const TrainingPartners = () => {
         if (error.response.status == 404) {
           setData("404");
         } else {
-          setError(error.message);
+          setData("500");
         }
       } finally {
         setLoading(false);
@@ -35,31 +35,29 @@ const TrainingPartners = () => {
     fetchPartners();
   }, []);
 
-  // useEffect(() => {}, [data]);
-
   if (data == "404") {
     return <NotFound />;
   }
-
-  if (error) {
-    return (
-      <div className="text-center py-16 text-red-500 text-lg">
-        Internal Server Error
-      </div>
-    );
+  if (data == "500") {
+    return <InternalServerError />;
   }
 
   return (
     <>
-      <Title title="TRAINING PARTNERS" />
-      <Container>
-        <div className="py-6">
-          <>
-            {loading && <div className="text-center text-sm">Loading...</div>}
-            {data && <Partners data={data} />}
-          </>
+      {loading ? (
+        <div className="min-h-[80vh] w-full flex items-center justify-center text-center">
+          <p>Loading...</p>
         </div>
-      </Container>
+      ) : data ? (
+        <>
+          <Title title="Training Partners" />
+          <Container>
+            <Partners data={data} />
+          </Container>
+        </>
+      ) : (
+        <div className="min-h-[80vh] w-full" />
+      )}
     </>
   );
 };
