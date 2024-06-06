@@ -4,11 +4,11 @@ const Partners = ({ data }) => {
   return (
     <>
       {data.map(({ name, image, description }) => (
-        <div key={name} className="pb-5 border-b">
+        <div key={name} className="pb-5 border-b sm:px-8 md:px-10 lg:px-0">
           <Heading>
             <span className="uppercase">{name}</span>
           </Heading>
-          <div className="sm:px-8 md:px-10 lg:px-0 flex flex-col lg:flex-row gap-8 lg:gap-5 lg:items-start -mt-2">
+          <div className=" flex flex-col lg:flex-row gap-8 lg:gap-5 lg:items-start -mt-2">
             <div className=" h-40 mx-auto relative flex items-center justify-center p-3 border-4 border-primary">
               <img
                 className="lg:w-80 lg:max-w-[20rem] h-32"
