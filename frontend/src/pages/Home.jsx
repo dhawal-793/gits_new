@@ -1,19 +1,17 @@
-import Carousel from "../components/home-components/Carousel";
+import MainCarousel from "../components/home-components/MainCarousel";
 import WhatsDifferent from "../components/home-components/WhatsDifferent";
-import HomePage from "../components/home-components/Rcarosel";
 import Reserch from "../components/home-components/Reserch";
-import SectionPage from "../components/home-components/Section3";
+import WhyChooseGITS from "../components/home-components/WhyChooseGITS";
+import Recruiters from "../components/home-components/Recruiters";
 
 const Home = () => {
   return (
     <>
-      <Carousel />
+      <MainCarousel />
       <WhatsDifferent />
-      <Reserch/>
-      <SectionPage/>
-      <HomePage />
-      
-     
+      <Reserch />
+      <WhyChooseGITS />
+      <Recruiters />
     </>
   );
 };
