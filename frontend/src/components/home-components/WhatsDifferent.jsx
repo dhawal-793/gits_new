@@ -2,7 +2,7 @@ import Achievement from "./Achievement";
 
 const WhatsDifferent = () => {
   return (
-    <div className="pt-20 md:px-5 mx-auto max-w-screen-2xl">
+    <div className="pt-20 md:px-5 mx-auto max-w-screen-2xl h-auto">
       <div className="bg-tertiary w-full rounded-t-3xl md:rounded-t-[2.5rem] md:rounded-b-[2.5rem]">
         <div className="relative w-full py-8 mx-auto px-2 max-w-screen-xl">
           <div className="relative z-10 space-y-8 lg:space-y-16">
