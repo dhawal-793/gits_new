@@ -69,4 +69,10 @@ body,
   .custom-scroll::-webkit-scrollbar {
     width: 8px;
   }
+  .innovations-text {
+    color: transparent;
+    -webkit-text-stroke: 2px black;
+    text-stroke: 2px black; /* For other browsers that support it */
+  }
+
 }
