@@ -1,31 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import axios from "axios";
 
-import Container from "../components/ui/Container";
 import Title from "../components/ui/Title";
 import NotFound from "../components/errors/NotFound";
 import InternalServerError from "../components/errors/InternalServerError";
-import mdxComponents from "../components/mdxComponents";
+import MarkdownContainer from "../components/MarkdownContainer";
 
-const BASE_URL = import.meta.env.VITE_HOST;
-
-const fetchMdx = async (filename) => {
-  try {
-    const response = await axios.get(`${BASE_URL}/api/admissions/${filename}`);
-    console.log({ response });
-    return response.data;
-  } catch (error) {
-    console.log(error.response);
-    if (error.response.status == 404) {
-      return "404";
-    } else {
-      return "500";
-    }
-  }
-};
+import { fetchMdx } from "../lib/fetch-mdx";
 
 const SubjectAdmission = () => {
   const { department } = useParams();
@@ -38,8 +19,8 @@ const SubjectAdmission = () => {
     const fetchContent = async () => {
       try {
         setLoading(true);
-        const data = await fetchMdx(`${department}`);
-        console.log(data);
+        const data = await fetchMdx(`admissions/${department}`);
+        // console.log(data);
         if (data == "404") {
           setMdxContent("404");
           setLoading(false);
@@ -54,6 +35,7 @@ const SubjectAdmission = () => {
         setMdxTitle(data.title);
       } catch (error) {
         console.error("Error fetching MDX content:", error);
+        setMdxContent("500");
       } finally {
         setLoading(false);
       }
@@ -75,24 +57,13 @@ const SubjectAdmission = () => {
         <div className="min-h-[80vh] w-full flex items-center justify-center text-center">
           <p>Loading...</p>
         </div>
+      ) : mdxContent ? (
+        <>
+          <Title title={mdxTitle} />
+          <MarkdownContainer>{mdxContent}</MarkdownContainer>
+        </>
       ) : (
-        mdxContent ?(
-          <>
-            <Title title={mdxTitle} />
-            <Container>
-              <div className="container mx-auto p-4">
-                <ReactMarkdown
-                  components={mdxComponents}
-                  remarkPlugins={[remarkGfm]}
-                >
-                  {mdxContent}
-                </ReactMarkdown>
-              </div>
-            </Container>
-          </>
-        ):(
-          <div className="min-h-[80vh] w-full"/>
-        )
+        <div className="min-h-[80vh] w-full" />
       )}
     </>
   );
