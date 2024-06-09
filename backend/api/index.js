@@ -6,6 +6,7 @@ import { config } from "dotenv";
 import managementsMessageRoute from "./management-teams-message.js";
 import partnerRoute from "./partners.js";
 import admissionRoute from "./admissions.js";
+import rndRoute from "./rnd.js";
 
 config();
 // connectToDB()
@@ -23,6 +24,7 @@ app.use(
 app.use("/api/managements-message", managementsMessageRoute);
 app.use("/api/partners", partnerRoute);
 app.use("/api/admissions", admissionRoute);
+app.use("/api/rnd", rndRoute);
 
 app.get("/", (req, res) => res.redirect(process.env.FRONTEND));
 
