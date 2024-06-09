@@ -85,7 +85,7 @@ const WhyChooseGITS = () => {
             </div>
           </div>
         </div>
-        <div className="w-full h-1 bg-primary mt-6 mb-16" />
+        <div className="w-full h-1 bg-primary my-6" />
       </Container>
     </>
   );

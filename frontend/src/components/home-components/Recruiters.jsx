@@ -24,6 +24,7 @@ const Recruiters = () => {
           <RecruiterCarousel />
         </div>
       </div>
+      <div className="w-full h-1 bg-primary my-6" />
     </Container>
   );
 };

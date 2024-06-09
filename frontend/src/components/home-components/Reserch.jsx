@@ -4,7 +4,7 @@ import CustomButton from "../CustomButton";
 const Reserch = () => {
   return (
     <Container>
-      <p className="text-xl sm:text-2xl text-center text-primary mb-3 md:mb-8 mt-16">
+      <p className="text-xl sm:text-2xl text-center text-primary mb-3 md:mb-8">
         Reserch at GITS
       </p>
       <div className="grid grid-cols-1 md:grid-cols-7 lg:grid-cols-9 md:place-items-center">
@@ -32,7 +32,7 @@ const Reserch = () => {
           />
         </div>
       </div>
-      <div className="w-full h-1 bg-primary mt-6 mb-16" />
+      <div className="w-full h-1 bg-primary my-6" />
     </Container>
   );
 };

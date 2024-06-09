@@ -38,7 +38,7 @@ const RecruiterCarousel = () => {
         loop={true}
         pagination={true}
         modules={[Pagination, Autoplay]}
-        className="mySwiper"
+        className="pb-6"
         infinite={true}
       >
         {recruiters.map((recruiter, index) => (
