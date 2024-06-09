@@ -4,7 +4,7 @@ const LearningWithInnovation = () => {
   return (
     <Container>
       <div className="text-center relative">
-        <h2 className="text-6xl md:text-8xl lg:text-9xl font-extrabold uppercase tracking-wider opacity-40 innovations-text">
+        <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold uppercase tracking-wider opacity-40 innovations-text">
           Innovations
         </h2>
         <h3 className="absolute inset-x-0 top-1/2 sm:text-2xl text-sm md:text-3xl font-medium text-black/80 -translate-y-1/2">

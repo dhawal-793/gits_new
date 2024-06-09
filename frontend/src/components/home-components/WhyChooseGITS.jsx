@@ -40,9 +40,9 @@ const WhyChooseGITS = () => {
     <>
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 place-items-center">
-          <div className="w-full pr-4 mb-6">
-            <p className="text-2xl font-bold mb-4">Why GITS?</p>
-            <h2 className="text-3xl font-bold mb-6 gap-2 flex flex-wrap">
+          <div className="w-full md:pr-4 mb-6">
+            <p className="text-lg sm:text-2xl font-semibold mb-4">Why GITS?</p>
+            <h2 className="text-xl sm:text-3xl font-bold mb-6 gap-2 flex flex-wrap">
               <span>REDEFINING</span>
               <span className="text-primary">ACADEMIC&nbsp;EXCELLENCE</span>
             </h2>
@@ -63,7 +63,7 @@ const WhyChooseGITS = () => {
               <span className="fas fa-chevron-right" />
             </Link>
           </div>
-          <div className="w-full md:ml-4 py-6 px-2 rounded-xl bg-gradient-to-b from-primary/70 to-primary/20">
+          <div className="w-full  py-6 px-2 rounded-xl bg-gradient-to-b from-primary/70 to-primary/20">
             <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
               {items.map((item, index) => (
                 <div key={index} className="w-full px-2 mb-4">

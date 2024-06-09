@@ -8,7 +8,7 @@ import OurPlacements from "../components/home-components/OurPlacements";
 const Home = () => {
   return (
     <>
-      <div className="space-y-8">
+      <div className="space-y-8 w-full">
         <MainCarousel />
         <WhatsDifferent />
         <Reserch />
