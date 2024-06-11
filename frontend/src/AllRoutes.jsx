@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 import Home from "./pages/Home";
 import ExtraPage from "./pages/ExtraPage";
@@ -25,8 +25,15 @@ import AssessmentPartners from "./pages/AssessmentPartners";
 import ManagementTeamPage from "./pages/ManagementTeamPage";
 import CurricularAspect from "./pages/CurricularAspect";
 import SubjectAdmission from "./pages/SubjectAdmission";
+import { useEffect } from "react";
 
 const AllRoutes = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
+
   return (
     <Routes>
       <Route exact path="/" element={<Home />} />
@@ -37,7 +44,11 @@ const AllRoutes = () => {
       <Route exact path="/placements/:year" element={<YearPlacements />} />
       <Route exact path="/gits-alumni-forum" element={<GITSAlumniForum />} />
       <Route exact path="/curricular-aspects" element={<CurricularAspect />} />
-      <Route exact path="/admission/:department" element={<SubjectAdmission />} />
+      <Route
+        exact
+        path="/admission/:department"
+        element={<SubjectAdmission />}
+      />
       <Route
         exact
         path="/research-innovation"
