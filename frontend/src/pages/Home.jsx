@@ -7,13 +7,13 @@ import LearningWithInnovation from "../components/home-components/LearningWithIn
 import OurPlacements from "../components/home-components/OurPlacements";
 
 import AnimatedWrapper from "../components/ui/AnimatedWrapper";
-
+import Facilities from "../components/home-components/Facilities";
 const Home = () => {
   return (
     <>
       <div className="space-y-8 w-full">
         <MainCarousel />
-        <AnimatedWrapper animateFrom="bottom" delay={0.2}>
+        <AnimatedWrapper animateFrom="bottom" delay={0.4}>
           <WhatsDifferent />
         </AnimatedWrapper>
         <AnimatedWrapper animateFrom="right">
@@ -25,12 +25,14 @@ const Home = () => {
         <AnimatedWrapper animateFrom="right">
           <OurPlacements />
         </AnimatedWrapper>
+        <Facilities/>
         <AnimatedWrapper>
           <LearningWithInnovation />
         </AnimatedWrapper>
         <AnimatedWrapper>
           <Recruiters />
         </AnimatedWrapper>
+        
       </div>
     </>
   );
