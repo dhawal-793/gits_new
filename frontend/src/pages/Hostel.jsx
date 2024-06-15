@@ -1,4 +1,5 @@
 import Container from "../components/ui/Container";
+import Seperator from "../components/ui/Seperator";
 import Title from "../components/ui/Title";
 
 const facilities = [
@@ -18,6 +19,7 @@ const Hostel = () => {
       <Container>
         <div className="sm:px-6 lg:px-8 py-5">
           {/* <div>Carousel</div> */}
+          <Seperator/>
           <div className="text-justify text-sm  space-y-6">
             <p className="space-x-1">
               <span>
@@ -64,6 +66,7 @@ const Hostel = () => {
               carried out at regular intervals.
             </p>
           </div>
+          <Seperator/>
           <div className="space-y-4 my-7">
             <h4 className="font-semibold text-xl">Facilities</h4>
             <ul className="space-y-2 list-disc font-medium pl-5">
@@ -74,6 +77,7 @@ const Hostel = () => {
               ))}
             </ul>
           </div>
+          <Seperator/>
         </div>
       </Container>
     </>
