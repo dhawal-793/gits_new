@@ -9,11 +9,11 @@ const AnimatedWrapper = ({ children, delay = 0.5, animateFrom = "bottom" }) => {
   useEffect(() => {
     if (isInView) {
       myControls.start("visible");
-      console.log("in view");
+      // console.log("in view");
     }
   }, [isInView]);
   return (
-    <div ref={ref} className="relative">
+    <div ref={ref} className="relative overflow-hidden">
       <motion.div
         variants={{
           hidden: {
