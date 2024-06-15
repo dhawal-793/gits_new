@@ -21,6 +21,8 @@ import Blog from "./pages/Blog";
 import BlogIdPage from "./pages/BlogIdPage";
 import Contact from "./pages/Contact";
 
+import Library from "./pages/Library";
+
 // TODO:
 
 import CurricularAspect from "./pages/CurricularAspect";
@@ -94,6 +96,8 @@ const AllRoutes = () => {
         <Route exact path="/blog" element={<Blog />} />
         <Route exact path="/blogs/:slug" element={<BlogIdPage />} />
         <Route exact path="/contact-us" element={<Contact />} />
+
+        <Route exact path="/library" element={<Library />} />
 
         {/* TODO */}
         <Route exact path="/placements" element={<Placements />} />
