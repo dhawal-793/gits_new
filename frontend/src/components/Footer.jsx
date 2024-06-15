@@ -1,26 +1,30 @@
 import Container from "./ui/Container";
 
 import { socialLinks } from "../data/socialLinks";
-
+import { Link } from "react-router-dom";
 
 const linksData = [
   {
     title: "Useful Links",
     links: [
-      "Academic Calendar",
-      "Aicte india",
-      "rtu kota (university)",
-      "nptel local chapter",
-      "moocs",
+      { title: "Academic Calendar", url: "/academic-calendar" },
+      { title: "Aicte india", url: "https://www.aicte-india.org",external:true },
+      { title: "rtu kota (university)", url: "https://www.rtu.ac.in/index/", external:true },
+      { title: "nptel local chapter", url: "https://nptel.ac.in/?collegeid=415",external:true },
+      { title: "moocs", url: "/moocs" },
     ],
   },
   {
     title: "Student Area",
-    links: ["newstrack", "hostel", "library", "ncc", "club"],
+    links: [
+      { title: "newstrack", url: "/newstrack" },
+      { title: "hostel", url: "/hostel" },
+      { title: "library", url: "/library" },
+      { title: "ncc", url: "/ncc" },
+      { title: "club", url: "/club" },
+    ],
   },
 ];
-
-
 
 const Footer = () => {
   return (
@@ -53,7 +57,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="lg:flex items-center justify-between w-full">
-          <p className="lg:text-sm">Copyright © 2021. GITS. All Rights Reserved</p>
+          <p className="lg:text-sm">
+            Copyright © 2021. GITS. All Rights Reserved
+          </p>
           <p className="lg:text-xs">Visitors: 4013800</p>
           <div className="flex items-center gap-3 pt-4 lg:pt-0 lg:pr-5">
             {socialLinks.map((link) => (
@@ -79,7 +85,9 @@ const FooterLinkGroup = ({ linkData }) => {
             className="border-b border-gray-500 pb-1 w-full flex items-center gap-3 cursor-pointer hover:text-primary"
           >
             <i className="fa-solid fa-chevron-right text-primary text-xs" />
-            <span>{link}</span>
+            {
+              link.external ? <a href={link.url} target="_blank">{link.title}</a>:<Link to={link.url}>{link.title}</Link>
+            }
           </li>
         ))}
       </ul>

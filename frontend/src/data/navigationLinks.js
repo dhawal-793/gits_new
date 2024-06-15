@@ -31,12 +31,12 @@ export const navLinks = [
             href: "/management-team/vice-chairmans-message",
           },
           {
-            title: "Director's Message",
-            href: "/management-team/directors-message",
-          },
-          {
             title: "Executive Director's Message",
             href: "/management-team/executive-directors-message",
+          },
+          {
+            title: "Director's Message",
+            href: "/management-team/directors-message",
           },
           {
             title: "Director's IQAC Message",
