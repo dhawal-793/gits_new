@@ -9,7 +9,7 @@ const Reserch = () => {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-7 lg:grid-cols-9 md:place-items-center">
         <div className="md:col-span-3 lg:col-span-4 md:pr-2 lg:pr-5">
-          <h3 className="my-4 md:my-2 lg:my-8 flex md:flex-col gap-2 lg:gap-4 text-2xl sm:text-4xl lg:text-5xl font-bold text-[#231f20] items-center justify-center md:items-start">
+          <h3 className="my-4 md:my-2 lg:my-8 flex md:flex-col gap-2 lg:gap-4 text-xl sm:text-4xl lg:text-5xl font-bold text-[#231f20] items-center justify-center md:items-start">
             <span className="block">EXPLORING THE</span>
             <span className="block">UNEXPLORED</span>
           </h3>
