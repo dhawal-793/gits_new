@@ -26,6 +26,7 @@ import ManagementTeamPage from "./pages/ManagementTeamPage";
 import CurricularAspect from "./pages/CurricularAspect";
 import SubjectAdmission from "./pages/SubjectAdmission";
 import { useEffect } from "react";
+import BlogIdPage from "./pages/BlogIdPage";
 
 const AllRoutes = () => {
   const location = useLocation();
@@ -39,6 +40,7 @@ const AllRoutes = () => {
       <Route exact path="/" element={<Home />} />
       <Route exact path="/contact-us" element={<Contact />} />
       <Route exact path="/blog" element={<Blog />} />
+      <Route exact path="/blogs/:slug" element={<BlogIdPage />} />
       <Route exact path="/departments" element={<Departments />} />
       <Route exact path="/placements" element={<Placements />} />
       <Route exact path="/placements/:year" element={<YearPlacements />} />
