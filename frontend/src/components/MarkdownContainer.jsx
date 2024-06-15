@@ -8,11 +8,9 @@ import mdxComponents from "./mdxComponents";
 const MarkdownContainer = ({ children }) => {
   return (
     <Container>
-      <div className="container mx-auto p-4">
-        <ReactMarkdown components={mdxComponents} remarkPlugins={[remarkGfm]}>
-          {children}
-        </ReactMarkdown>
-      </div>
+      <ReactMarkdown components={mdxComponents} remarkPlugins={[remarkGfm]}>
+        {children}
+      </ReactMarkdown>
     </Container>
   );
 };
