@@ -24,11 +24,7 @@ export const H2Heading = ({ children }) => {
 export const H3Heading = ({ children }) => {
   return (
     <>
-      <h2 className="font-semibold text-base sm:text-lg mt-8">{children}</h2>
-      <div className="w-full flex items-center gap-5 my-4 md:my-6">
-        <div className="w-12 bg-primary h-[3px]" />
-        <div className="w-full bg-tertiary/20 h-[1px]" />
-      </div>
+      <h2 className="font-semibold text-base sm:text-lg mt-8 mb-4">{children}</h2>
     </>
   );
 };
