@@ -28,7 +28,7 @@ const linksData = [
 
 const Footer = () => {
   return (
-    <footer className="bg-tertiary w-full text-white py-4">
+    <footer className="bg-black w-full text-white py-4">
       <Container>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-7 gap-x-8 py-10 ">
           {linksData.map((linksData, idx) => (
