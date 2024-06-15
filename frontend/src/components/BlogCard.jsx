@@ -6,9 +6,9 @@ const BlogCard = ({ image, title, meta_description, url }) => {
   return (
     <div
       onClick={() => navigate(`/blogs/${url}`)}
-      className="max-w-96 mx-auto w-full rounded-lg p-3 border hover:border-prim shadow-xl hover:shadow-tertiary/40 scale-[0.99] hover:scale-100 duration-500 transition-all flex flex-col justify-between gap-3"
+      className="max-w-96 mx-auto w-full rounded-lg p-3 border hover:border-prim shadow-xl hover:shadow-tertiary/40 scale-[0.99] hover:scale-100 duration-500 transition-all flex flex-col justify-between gap-5"
     >
-      <div className="flex items-center flex-col cursor-pointer ">
+      <div className="flex items-start flex-col cursor-pointer ">
         <img
           src={image}
           alt={title}
