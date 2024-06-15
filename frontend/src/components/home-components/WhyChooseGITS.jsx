@@ -39,14 +39,35 @@ const WhyChooseGITS = () => {
   return (
     <>
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 place-items-center">
-          <div className="w-full md:pr-4 mb-6">
+        <div className="flex flex-col-reverse md:flex-row items-center gap-5 md:gap-3">
+          <div className="w-full  py-6 px-2 rounded-xl bg-gradient-to-b from-primary/70 to-primary/20">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 gap-4 lg:grid-cols-3">
+              {items.map((item, index) => (
+                <div key={index} className="w-full px-1 md:py-1 lg:my-4">
+                  <a
+                    href={item.link}
+                    className=" bg-yellow-100 hover:bg-primary/50 rounded-lg shadow-md text-center backdrop-blur-lg bg-opacity-50 grid grid-cols-1 gap-4 lg:gap-8 place-items-center py-4"
+                  >
+                    <div className="mx-auto ">
+                      <i
+                        className={`${item.icon} text-2xl sm:text-3xl lg:text-4xl`}
+                      ></i>
+                    </div>
+                    <p className="mt-2 text-sm sm:text-base xl:text-lg font-semibold tracking-wider">
+                      {item.title}
+                    </p>
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="w-full">
             <p className="text-lg sm:text-2xl font-semibold mb-4">Why GITS?</p>
-            <h2 className="text-xl sm:text-3xl font-bold mb-6 gap-2 flex flex-wrap">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-6 gap-2 flex flex-wrap">
               <span>REDEFINING</span>
               <span className="text-primary">ACADEMIC&nbsp;EXCELLENCE</span>
             </h2>
-            <p className="mb-4 text-sm text-justify">
+            <p className="mb-8 text-sm md:text-base text-justify">
               GITS has best in-class infrastructure, including the
               state-of-the-art research facilities and a modern digital library.
               As a multi-disciplinary College, GITS offers career-oriented
@@ -62,27 +83,6 @@ const WhyChooseGITS = () => {
               <span>Explore more</span>
               <span className="fas fa-chevron-right" />
             </Link>
-          </div>
-          <div className="w-full  py-6 px-2 rounded-xl bg-gradient-to-b from-primary/70 to-primary/20">
-            <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
-              {items.map((item, index) => (
-                <div key={index} className="w-full px-2 mb-4">
-                  <a
-                    href={item.link}
-                    className=" bg-yellow-100 hover:bg-primary/50 rounded-lg shadow-md text-center backdrop-blur-lg bg-opacity-50 grid grid-cols-1 gap-4 place-items-center py-4"
-                  >
-                    <div className="mx-auto ">
-                      <i
-                        className={`${item.icon} text-2xl sm:text-3xl lg:text-4xl`}
-                      ></i>
-                    </div>
-                    <h4 className="mt-2 text-sm sm:text-base xl:text-lg font-semibold tracking-wider">
-                      {item.title}
-                    </h4>
-                  </a>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
         <div className="w-full h-1 bg-primary my-6" />
