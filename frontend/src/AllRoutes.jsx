@@ -6,6 +6,7 @@ import WhyGits from "./pages/WhyGits";
 import VisionAndMission from "./pages/VisionAndMission";
 import ManagementTeamsMessage from "./pages/ManagementTeamsMessage";
 import InstitutionsInnovationCouncil from "./pages/InstitutionsInnovationCouncil";
+import IQAC from "./pages/IQAC";
 import SubjectAdmission from "./pages/SubjectAdmission";
 import Hostel from "./pages/Hostel";
 import ResearchInnovation from "./pages/ResearchInnovation";
@@ -54,6 +55,7 @@ const AllRoutes = () => {
           path="/institutions-innovation-council"
           element={<InstitutionsInnovationCouncil />}
         />
+        <Route exact path="/iqac" element={<IQAC />} />
 
         <Route
           exact
