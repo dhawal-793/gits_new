@@ -5,7 +5,7 @@ import WhyChooseGITS from "../components/home-components/WhyChooseGITS";
 import Recruiters from "../components/home-components/Recruiters";
 import LearningWithInnovation from "../components/home-components/LearningWithInnovation";
 import OurPlacements from "../components/home-components/OurPlacements";
-
+import CorporateTour from "../components/home-components/CorporateTour"
 import AnimatedWrapper from "../components/ui/AnimatedWrapper";
 import Facilities from "../components/home-components/Facilities";
 const Home = () => {
@@ -22,13 +22,14 @@ const Home = () => {
         <AnimatedWrapper animateFrom="left">
           <WhyChooseGITS />
         </AnimatedWrapper>
+        <Facilities/>
         <AnimatedWrapper animateFrom="right">
           <OurPlacements />
         </AnimatedWrapper>
-        <Facilities/>
         <AnimatedWrapper>
           <LearningWithInnovation />
         </AnimatedWrapper>
+        <CorporateTour/>
         <AnimatedWrapper>
           <Recruiters />
         </AnimatedWrapper>
