@@ -4,7 +4,7 @@ import Container from "../ui/Container";
 const Facilities = () => {
   return (
     <Container>
-      <div className="text-center my-8">
+      <div className="text-center">
         <h1 className="text-xl sm:text-5xl ">
           Here Is How We Make You The Best
         </h1>
