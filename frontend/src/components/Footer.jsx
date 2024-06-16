@@ -58,7 +58,7 @@ const Footer = () => {
         </div>
         <div className="lg:flex items-center justify-between w-full">
           <p className="lg:text-sm">
-            Copyright © 2021. GITS. All Rights Reserved
+            Copyright © 2024. GITS. All Rights Reserved
           </p>
           <p className="lg:text-xs">Visitors: 4013800</p>
           <div className="flex items-center gap-3 pt-4 lg:pt-0 lg:pr-5">
@@ -101,7 +101,7 @@ const SocialLinks = ({ href, color, icon }) => {
       <a
         href={href}
         target="_blank"
-        className={`size-9 rounded-full bg-tertiary ${color} group transition-all duration-300 flex items-center justify-center shadow-md shadow-white/20`}
+        className={`size-9 rounded-full bg-black ${color} group transition-all duration-300 flex items-center justify-center shadow-md shadow-white/20`}
       >
         <i
           className={`cursor-pointer fa-brands ${icon} text-white group-hover:rotate-[360deg] transition-all duration-300`}

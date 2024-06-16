@@ -27,9 +27,8 @@ const MainCarousel = () => {
         slidesPerView={1}
         autoplay={true}
         loop={true}
-        pagination={true}
-        modules={[Pagination, Autoplay, EffectCreative]}
-        className="pb-6 "
+        // pagination={true}
+        modules={[ Autoplay, EffectCreative]}
         infinite={true}
         effect={"creative"}
         creativeEffect={{
