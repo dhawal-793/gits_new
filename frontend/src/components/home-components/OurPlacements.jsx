@@ -2,7 +2,7 @@ import Container from "../ui/Container";
 
 function OurPlacements() {
   return (
-    <div className="px-4 py-10 lg:py-20 xl:py-24 2xl:py-28 lg:rounded-l-full lg:ml-10 bg-black  bg-cover bg-opacity-80 bg-[url('images/cs.jpg')] bg-blend-multiply">
+    <div className="px-4 py-10 lg:py-20 xl:py-24 2xl:py-28 lg:rounded-l-full lg:ml-10 bg-black  bg-cover bg-opacity-80 bg-[url('/images/cs.jpg')] bg-blend-multiply">
       <div className="w-full lg:-ml-5">
         <Container>
           <div className="text-center">
